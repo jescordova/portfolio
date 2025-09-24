@@ -1,8 +1,16 @@
 <script>
     import Header from "$lib/components/skeleton/Header.svelte";
+    import Navigation from "$lib/components/skeleton/Navigation.svelte";
     import { user } from '$lib/js/infos';
-    
+    import { home } from '$lib/js/icons';
+
+    const page = {
+        name: `${home.label.toLowerCase()}`,
+        section: 'portfolio'
+    }
 </script>
+
+<Navigation {home} {page} />
 
 <div id="container">
     <Header { user } />
