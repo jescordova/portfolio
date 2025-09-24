@@ -15,7 +15,7 @@
         <div class="info text-center md:text-right">
             <h1 class="text-3xl md:text-5xl">{user.first_name} <strong>{user.last_name}</strong></h1>
             <h2 class="text-xl md:text-3xl">{user.diploma}</h2>
-            <div class="icons">
+            <div class="icons flex justify-center md:justify-end">
                 {#each contacts as icon}
                     <Icons {...icon} />
                 {/each}
