@@ -1,31 +1,38 @@
+export const home = {
+    href: '/', 
+    label: 'Accueil', 
+    name: 'bx bxs-home', 
+    target: '_parent'
+}
+
 export const contacts = [
     {
         href: 'mailto:jescordova@gmail.com', 
-        label: 'email', 
+        label: 'Email', 
         name: 'bx bxs-envelope', 
         target: '_parent'
     },
     {
         href: 'tel:+32479069836', 
-        label: 'phone', 
+        label: 'Phone', 
         name: 'bx bxs-phone', 
         target: '_parent'
     },
     {
         href: 'https://maps.app.goo.gl/jeptJdup6PZa91uq7', 
-        label: 'map', 
+        label: 'Location', 
         name: 'bx bxs-map', 
         target: '_blanc'
     },
     {
         href: 'https://portfolio-yasta.netlify.app/', 
-        label: 'portfolio', 
+        label: 'Portfolio', 
         name: 'bx bxs-folder', 
         target: '_blanc'
     },
     {
         href: '/cv/', 
-        label: 'curriculum-vitae', 
+        label: 'Curriculum-vitae', 
         name: 'bx bx-file', 
         target: '_blanc'
     },
@@ -34,13 +41,13 @@ export const contacts = [
 export const social = [
     {
         href: 'https://portfolio-yasta.netlify.app/', 
-        label: 'yasta', 
+        label: 'Yasta', 
         name: 'bx bx-world', 
         target: '_blanc'
     },
     {
         href: 'https://github.com/jescordova', 
-        label: 'github', 
+        label: 'Github', 
         name: 'bx bxl-github', 
         target: '_blanc'
     },
