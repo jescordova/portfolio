@@ -7,7 +7,7 @@
 <nav class="flex justify-between items-center capitalize mb-1">
     {#if page.name !== 'accueil'}
         <div class="flex items-center ">
-            <Icons />
+            <Icons {...home}/>
             <i class="bx bx-chevron-right text-xl"></i>
             <span>{ page.name }</span>
         </div>
