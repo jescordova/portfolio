@@ -49,7 +49,6 @@
 
 /* BODY */
 body {
-    margin: 1rem;
     font-weight: 100;
     font-family: var(--font-family);
     font-size: var(--font);
@@ -59,9 +58,9 @@ body {
 .skeleton {
     background: var(--light-bg);
     box-shadow: 0 0 1px var(--secondary);
+    padding: 1rem;
     border-radius: 0.3rem;
     min-height: calc(100vh - 2rem);
-    padding: 2rem 5rem 1rem 5rem;
     max-width: 900px;
     margin: 0 auto;
     transition: .2s box-shadow ease-in-out;
@@ -108,3 +107,12 @@ h2,h3{
 p {margin: 0.5rem 0;}
 a {transition: all .3s ease;}
 a:hover {color: var(--primary);}
+
+@media screen and (min-width: 600px){
+    body {
+        margin: 1rem;
+    }
+    .skeleton{
+        padding: 2.5rem 5rem 1rem 5rem;
+    }
+}
