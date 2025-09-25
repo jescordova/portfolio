@@ -22,7 +22,7 @@
             <h3 class="text-xl">Mes Projets</h3>
             <ul class="list-disc ml-7">
                 {#each projects as project}
-                    <li class="flex items-center justify-between"><Links {project} /></li>
+                    <li class="flex items-start justify-between"><Links {project} /></li>
                 {/each}
             </ul>
         </section>
