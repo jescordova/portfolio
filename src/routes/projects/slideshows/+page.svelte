@@ -33,8 +33,8 @@
                        <li>Utilisation de <code>onclick</code> pour les boutons de navigations.</li>
                     </ul>
                 </li>
-                <li>
-                    <ul><strong>Style :</strong>
+                <li><strong>Style :</strong>
+                    <ul>
                         <li>Utilisation de Tailwind CSS pour les styles.</li>
                         <li>Animation de <code>fade</code> avec une <code>cléframe</code>.</li>
                     </ul>
