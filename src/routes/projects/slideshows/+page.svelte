@@ -1,8 +1,9 @@
 <script>
     import SlideshowCarousel from "$lib/projects/SlideshowCarousel.svelte";
+    import SlideshowScroll from "$lib/projects/SlideshowScroll.svelte";
     import Navigation from "$lib/components/skeleton/Navigation.svelte";
     import { home } from '$lib/js/icons';
-    import { galapagos } from "$lib/js/slides";
+    import { galapagos, belgium } from "$lib/js/slides";
 
     const page = {
         name: "Slideshows",
@@ -41,6 +42,16 @@
                 </li>
                 
             </ul>
-        </section>      
+        </section>   
+        <section>
+            <h3>Slideshow Carousel and Auto-Scroll</h3>
+            <SlideshowScroll { belgium } />
+            <ul>
+                <li>On ajoute de <code>props</code> pour permettre à l'utilisateur de personaliser les images, les captions, et d'autres paramètres du slideshow.</li>
+                <li>On ajoute une option function <code>(scroll)</code> pour faire défiler automatiquement les images.</li>
+                <li>On utilise le <code>lazy loading</code> pour améliorer les performances des images.</li>
+            </ul>
+            <!-- < {slideBelgium} autoScroll={false} scrollInterval={2000}/> -->
+        </section>   
     </main>
 </div>
