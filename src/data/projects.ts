@@ -6,10 +6,10 @@ export const projects = [
             en: "A comprehensive administrative dashboard with real-time charts and inventory management.",
             es: "Un panel administrativo completo con gráficos en tiempo real y gestión de inventario."
         },
-        tags: ["SvelteKit", "TailwindCSS", "Chart.js"],
+        tags: ["Astro", "TailwindCSS", "Chart.js"],
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
         github: "#",
-        demo: "#",
+        demo: "/demo/ecommerce-dashboard",
         isRecent: true
     },
     {

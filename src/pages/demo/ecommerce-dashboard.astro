@@ -1,0 +1,367 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import DashboardCharts from "../../components/DashboardCharts.astro";
+---
+
+<Layout title="E-commerce Dashboard Demo | Yasta Portfolio">
+    <Header />
+
+    <main
+        class="pt-24 pb-20 min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
+    >
+        <div class="container mx-auto px-6">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1
+                    class="text-4xl font-bold mb-2 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent"
+                >
+                    E-commerce Dashboard
+                </h1>
+                <p class="text-slate-400">
+                    Vue d'ensemble des performances et statistiques
+                </p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
+            >
+                <!-- Revenue Card -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-xl"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-slate-900/90 backdrop-blur-xl p-6 rounded-2xl border border-indigo-500/20 hover:border-indigo-500/40 transition-all"
+                    >
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/50"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium"
+                                >+12.5%</span
+                            >
+                        </div>
+                        <h3 class="text-3xl font-bold mb-1 text-white">
+                            €45,231
+                        </h3>
+                        <p class="text-slate-400 text-sm">Revenus totaux</p>
+                    </div>
+                </div>
+
+                <!-- Orders Card -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-xl"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-slate-900/90 backdrop-blur-xl p-6 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all"
+                    >
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/50"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium"
+                                >+8.2%</span
+                            >
+                        </div>
+                        <h3 class="text-3xl font-bold mb-1 text-white">
+                            1,234
+                        </h3>
+                        <p class="text-slate-400 text-sm">Commandes</p>
+                    </div>
+                </div>
+
+                <!-- Customers Card -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-xl"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-slate-900/90 backdrop-blur-xl p-6 rounded-2xl border border-pink-500/20 hover:border-pink-500/40 transition-all"
+                    >
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center shadow-lg shadow-pink-500/50"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium"
+                                >+23.1%</span
+                            >
+                        </div>
+                        <h3 class="text-3xl font-bold mb-1 text-white">
+                            8,549
+                        </h3>
+                        <p class="text-slate-400 text-sm">Clients</p>
+                    </div>
+                </div>
+
+                <!-- Products Card -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-xl"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-slate-900/90 backdrop-blur-xl p-6 rounded-2xl border border-orange-500/20 hover:border-orange-500/40 transition-all"
+                    >
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/50"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-sm font-medium"
+                                >-3.4%</span
+                            >
+                        </div>
+                        <h3 class="text-3xl font-bold mb-1 text-white">342</h3>
+                        <p class="text-slate-400 text-sm">Produits en stock</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <DashboardCharts />
+
+            <!-- Recent Orders Table -->
+            <div class="relative group">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity blur-2xl"
+                >
+                </div>
+                <div
+                    class="relative bg-slate-900/90 backdrop-blur-xl p-6 rounded-2xl border border-white/10 hover:border-indigo-500/30 transition-all"
+                >
+                    <h3 class="text-xl font-bold mb-6 text-white">
+                        Commandes récentes
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-white/10">
+                                    <th
+                                        class="text-left py-3 px-4 text-slate-400 font-medium text-sm"
+                                        >ID</th
+                                    >
+                                    <th
+                                        class="text-left py-3 px-4 text-slate-400 font-medium text-sm"
+                                        >Client</th
+                                    >
+                                    <th
+                                        class="text-left py-3 px-4 text-slate-400 font-medium text-sm"
+                                        >Produit</th
+                                    >
+                                    <th
+                                        class="text-left py-3 px-4 text-slate-400 font-medium text-sm"
+                                        >Montant</th
+                                    >
+                                    <th
+                                        class="text-left py-3 px-4 text-slate-400 font-medium text-sm"
+                                        >Statut</th
+                                    >
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr
+                                    class="border-b border-white/5 hover:bg-white/5 transition-colors"
+                                >
+                                    <td
+                                        class="py-4 px-4 text-slate-300 font-mono text-sm"
+                                        >#12345</td
+                                    >
+                                    <td class="py-4 px-4 text-white"
+                                        >Marie Dubois</td
+                                    >
+                                    <td class="py-4 px-4 text-slate-300"
+                                        >MacBook Pro 16"</td
+                                    >
+                                    <td
+                                        class="py-4 px-4 font-semibold text-white"
+                                        >€2,499</td
+                                    >
+                                    <td class="py-4 px-4">
+                                        <span
+                                            class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium border border-green-500/30"
+                                        >
+                                            Livré
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr
+                                    class="border-b border-white/5 hover:bg-white/5 transition-colors"
+                                >
+                                    <td
+                                        class="py-4 px-4 text-slate-300 font-mono text-sm"
+                                        >#12344</td
+                                    >
+                                    <td class="py-4 px-4 text-white"
+                                        >Jean Martin</td
+                                    >
+                                    <td class="py-4 px-4 text-slate-300"
+                                        >iPhone 15 Pro</td
+                                    >
+                                    <td
+                                        class="py-4 px-4 font-semibold text-white"
+                                        >€1,199</td
+                                    >
+                                    <td class="py-4 px-4">
+                                        <span
+                                            class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm font-medium border border-blue-500/30"
+                                        >
+                                            En cours
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr
+                                    class="border-b border-white/5 hover:bg-white/5 transition-colors"
+                                >
+                                    <td
+                                        class="py-4 px-4 text-slate-300 font-mono text-sm"
+                                        >#12343</td
+                                    >
+                                    <td class="py-4 px-4 text-white"
+                                        >Sophie Laurent</td
+                                    >
+                                    <td class="py-4 px-4 text-slate-300"
+                                        >AirPods Pro</td
+                                    >
+                                    <td
+                                        class="py-4 px-4 font-semibold text-white"
+                                        >€279</td
+                                    >
+                                    <td class="py-4 px-4">
+                                        <span
+                                            class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium border border-green-500/30"
+                                        >
+                                            Livré
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr
+                                    class="border-b border-white/5 hover:bg-white/5 transition-colors"
+                                >
+                                    <td
+                                        class="py-4 px-4 text-slate-300 font-mono text-sm"
+                                        >#12342</td
+                                    >
+                                    <td class="py-4 px-4 text-white"
+                                        >Pierre Durand</td
+                                    >
+                                    <td class="py-4 px-4 text-slate-300"
+                                        >iPad Air</td
+                                    >
+                                    <td
+                                        class="py-4 px-4 font-semibold text-white"
+                                        >€699</td
+                                    >
+                                    <td class="py-4 px-4">
+                                        <span
+                                            class="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-sm font-medium border border-yellow-500/30"
+                                        >
+                                            En attente
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-white/5 transition-colors">
+                                    <td
+                                        class="py-4 px-4 text-slate-300 font-mono text-sm"
+                                        >#12341</td
+                                    >
+                                    <td class="py-4 px-4 text-white"
+                                        >Emma Bernard</td
+                                    >
+                                    <td class="py-4 px-4 text-slate-300"
+                                        >Apple Watch Series 9</td
+                                    >
+                                    <td
+                                        class="py-4 px-4 font-semibold text-white"
+                                        >€449</td
+                                    >
+                                    <td class="py-4 px-4">
+                                        <span
+                                            class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium border border-green-500/30"
+                                        >
+                                            Livré
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer
+        class="py-8 text-center text-slate-500 text-sm border-t border-white/5 bg-slate-950"
+    >
+        <div class="container mx-auto px-6">
+            <p>
+                &copy; {new Date().getFullYear()} Yasta Portfolio. Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+</Layout>

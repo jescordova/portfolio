@@ -1,0 +1,242 @@
+---
+// Dashboard Charts Component
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+    <!-- Revenue Chart -->
+    <div class="relative group">
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity blur-2xl"
+        >
+        </div>
+        <div
+            class="relative bg-slate-900/90 backdrop-blur-xl p-6 rounded-2xl border border-white/10 hover:border-indigo-500/30 transition-all"
+        >
+            <h3 class="text-xl font-bold mb-6 text-white">Revenus mensuels</h3>
+            <div style="position: relative; height: 250px; width: 100%;">
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Orders Chart -->
+    <div class="relative group">
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity blur-2xl"
+        >
+        </div>
+        <div
+            class="relative bg-slate-900/90 backdrop-blur-xl p-6 rounded-2xl border border-white/10 hover:border-purple-500/30 transition-all"
+        >
+            <h3 class="text-xl font-bold mb-6 text-white">
+                Commandes par catégorie
+            </h3>
+            <div style="position: relative; height: 250px; width: 100%;">
+                <canvas id="ordersChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"
+></script>
+
+<script is:inline>
+    (function () {
+        // CRITICAL: Prevent any re-execution
+        if (window.__dashboardChartsInitialized) {
+            console.log("[Dashboard] Charts already initialized, skipping");
+            return;
+        }
+        window.__dashboardChartsInitialized = true;
+        console.log("[Dashboard] Initializing charts for the first time");
+
+        function initCharts() {
+            // Wait for Chart.js to be available
+            if (typeof Chart === "undefined") {
+                console.log("[Dashboard] Waiting for Chart.js...");
+                setTimeout(initCharts, 100);
+                return;
+            }
+
+            console.log("[Dashboard] Chart.js loaded, creating charts");
+
+            // Revenue Chart
+            const revenueCanvas = document.getElementById("revenueChart");
+            if (revenueCanvas) {
+                const existingChart = Chart.getChart(revenueCanvas);
+                if (existingChart) {
+                    console.log(
+                        "[Dashboard] Destroying existing revenue chart",
+                    );
+                    existingChart.destroy();
+                }
+
+                if (!revenueCanvas.__initialized) {
+                    console.log("[Dashboard] Creating revenue chart");
+                    revenueCanvas.__initialized = true;
+                    new Chart(revenueCanvas, {
+                        type: "line",
+                        data: {
+                            labels: [
+                                "Jan",
+                                "Fév",
+                                "Mar",
+                                "Avr",
+                                "Mai",
+                                "Jun",
+                                "Jul",
+                                "Aoû",
+                                "Sep",
+                                "Oct",
+                                "Nov",
+                                "Déc",
+                            ],
+                            datasets: [
+                                {
+                                    label: "Revenus (€)",
+                                    data: [
+                                        12000, 19000, 15000, 25000, 22000,
+                                        30000, 28000, 35000, 32000, 40000,
+                                        38000, 45000,
+                                    ],
+                                    borderColor: "rgb(99, 102, 241)",
+                                    backgroundColor: "rgba(99, 102, 241, 0.2)",
+                                    tension: 0.4,
+                                    fill: true,
+                                    borderWidth: 3,
+                                    pointBackgroundColor: "rgb(99, 102, 241)",
+                                    pointBorderColor: "#fff",
+                                    pointBorderWidth: 2,
+                                    pointRadius: 5,
+                                    pointHoverRadius: 7,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            animation: {
+                                duration: 0,
+                            },
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    backgroundColor: "rgba(15, 23, 42, 0.9)",
+                                    titleColor: "#fff",
+                                    bodyColor: "#cbd5e1",
+                                    borderColor: "rgba(99, 102, 241, 0.5)",
+                                    borderWidth: 1,
+                                    padding: 12,
+                                    displayColors: false,
+                                },
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    grid: {
+                                        color: "rgba(255, 255, 255, 0.05)",
+                                        drawBorder: false,
+                                    },
+                                    ticks: {
+                                        color: "rgba(255, 255, 255, 0.6)",
+                                        font: { size: 12 },
+                                    },
+                                },
+                                x: {
+                                    grid: {
+                                        color: "rgba(255, 255, 255, 0.05)",
+                                        drawBorder: false,
+                                    },
+                                    ticks: {
+                                        color: "rgba(255, 255, 255, 0.6)",
+                                        font: { size: 12 },
+                                    },
+                                },
+                            },
+                        },
+                    });
+                }
+            }
+
+            // Orders Chart
+            const ordersCanvas = document.getElementById("ordersChart");
+            if (ordersCanvas) {
+                const existingChart = Chart.getChart(ordersCanvas);
+                if (existingChart) {
+                    console.log("[Dashboard] Destroying existing orders chart");
+                    existingChart.destroy();
+                }
+
+                if (!ordersCanvas.__initialized) {
+                    console.log("[Dashboard] Creating orders chart");
+                    ordersCanvas.__initialized = true;
+                    new Chart(ordersCanvas, {
+                        type: "doughnut",
+                        data: {
+                            labels: [
+                                "Électronique",
+                                "Vêtements",
+                                "Maison",
+                                "Sports",
+                                "Livres",
+                            ],
+                            datasets: [
+                                {
+                                    data: [450, 280, 190, 150, 164],
+                                    backgroundColor: [
+                                        "rgb(99, 102, 241)",
+                                        "rgb(168, 85, 247)",
+                                        "rgb(236, 72, 153)",
+                                        "rgb(251, 146, 60)",
+                                        "rgb(34, 197, 94)",
+                                    ],
+                                    borderWidth: 0,
+                                    hoverOffset: 10,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            animation: {
+                                duration: 0,
+                            },
+                            plugins: {
+                                legend: {
+                                    position: "bottom",
+                                    labels: {
+                                        color: "rgba(255, 255, 255, 0.8)",
+                                        padding: 20,
+                                        font: { size: 13 },
+                                        usePointStyle: true,
+                                        pointStyle: "circle",
+                                    },
+                                },
+                                tooltip: {
+                                    backgroundColor: "rgba(15, 23, 42, 0.9)",
+                                    titleColor: "#fff",
+                                    bodyColor: "#cbd5e1",
+                                    borderColor: "rgba(99, 102, 241, 0.5)",
+                                    borderWidth: 1,
+                                    padding: 12,
+                                },
+                            },
+                        },
+                    });
+                }
+            }
+
+            console.log("[Dashboard] Charts initialization complete");
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", function () {
+                setTimeout(initCharts, 200);
+            });
+        } else {
+            setTimeout(initCharts, 200);
+        }
+    })();
+</script>
