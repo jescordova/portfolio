@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../Header.astro";
+import Hero from "../Hero.astro";
+import Skills from "../Skills.astro";
+import Projects from "../Projects.astro";
+import Contact from "../Contact.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout
+    title={t("home.title") + " | Yasta Portfolio"}
+    description={t("home.description")}
+>
+    <Header />
+
+    <main>
+        <Hero />
+        <Skills />
+        <Projects />
+        <Contact />
+    </main>
+
+    <footer
+        class="py-8 text-center text-slate-500 text-sm border-t border-white/5 bg-slate-950"
+    >
+        <div class="container mx-auto px-6">
+            <p>
+                &copy; {new Date().getFullYear()} Yasta Portfolio. {
+                    t("footer.rights")
+                }
+            </p>
+            <p class="mt-2">
+                Développé avec <span class="text-indigo-400">Astro</span> & <span
+                    class="text-indigo-400">TailwindCSS</span>
+            </p>
+        </div>
+    </footer>
+</Layout>

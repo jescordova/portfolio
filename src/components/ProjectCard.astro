@@ -1,0 +1,77 @@
+---
+import { ExternalLink, Github } from "lucide-astro";
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+
+interface Props {
+  project: {
+    title: string;
+    description: {
+      fr: string;
+      en: string;
+      es: string;
+    };
+    tags: string[];
+    image: string;
+    github: string;
+    demo: string;
+  };
+}
+
+const { project } = Astro.props;
+---
+
+<div
+  class="group rounded-2xl overflow-hidden bg-slate-900 border border-white/10 hover:border-indigo-500/50 transition-all duration-300 hover:-translate-y-1"
+>
+  <div class="relative h-48 overflow-hidden">
+    <div
+      class="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors z-10"
+    >
+    </div>
+    <img
+      src={project.image}
+      alt={project.title}
+      class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+    />
+  </div>
+
+  <div class="p-6">
+    <h3
+      class="text-xl font-bold mb-2 group-hover:text-indigo-400 transition-colors"
+    >
+      {project.title}
+    </h3>
+    <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+      {project.description[lang]}
+    </p>
+
+    <div class="flex flex-wrap gap-2 mb-6">
+      {
+        project.tags.map((tag) => (
+          <span class="px-3 py-1 text-xs font-medium rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+            {tag}
+          </span>
+        ))
+      }
+    </div>
+
+    <div class="flex items-center gap-4 pt-4 border-t border-white/5">
+      <a
+        href={project.github}
+        class="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
+      >
+        <Github class="w-4 h-4" />
+        Code
+      </a>
+      <a
+        href={project.demo}
+        class="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors ml-auto"
+      >
+        <ExternalLink class="w-4 h-4" />
+        Demo
+      </a>
+    </div>
+  </div>
+</div>

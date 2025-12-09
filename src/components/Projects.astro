@@ -1,0 +1,42 @@
+---
+import { projects } from "../data/projects";
+import ProjectCard from "./ProjectCard.astro";
+import { ArrowRight } from "lucide-astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getRelativeLocaleUrl,
+} from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const recentProjects = projects.filter((p) => p.isRecent).slice(0, 3);
+---
+
+<section id="projects" class="py-20 bg-slate-900/50">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        {t("projects.recent")}
+      </h2>
+      <p class="text-slate-400 max-w-2xl mx-auto">
+        {t("projects.recentDescription")}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {recentProjects.map((project) => <ProjectCard project={project} />)}
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href={getRelativeLocaleUrl(lang, "/projects")}
+        class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-full transition-colors"
+      >
+        {t("projects.viewAll")}
+        <ArrowRight class="w-4 h-4" />
+      </a>
+    </div>
+  </div>
+</section>

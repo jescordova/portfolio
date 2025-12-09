@@ -1,0 +1,46 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../Header.astro";
+import ProjectCard from "../ProjectCard.astro";
+import { projects } from "../../data/projects";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout
+    title={t("projects.title") + " | Yasta Portfolio"}
+    description={t("projects.description")}
+>
+    <Header />
+
+    <main class="pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    {t("projects.title")}
+                </h1>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    {t("projects.description")}
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {projects.map((project) => <ProjectCard project={project} />)}
+            </div>
+        </div>
+    </main>
+
+    <footer
+        class="py-8 text-center text-slate-500 text-sm border-t border-white/5 bg-slate-950"
+    >
+        <div class="container mx-auto px-6">
+            <p>
+                &copy; {new Date().getFullYear()} Yasta Portfolio. {
+                    t("footer.rights")
+                }
+            </p>
+        </div>
+    </footer>
+</Layout>

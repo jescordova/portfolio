@@ -1,0 +1,161 @@
+---
+import { Menu, X, Github, Linkedin, Mail } from "lucide-astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getRelativeLocaleUrl,
+} from "../i18n/utils";
+import LanguagePicker from "./LanguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const navItems = [
+  { name: t("nav.home"), href: getRelativeLocaleUrl(lang, "/#home") },
+  { name: t("nav.projects"), href: getRelativeLocaleUrl(lang, "/#projects") },
+  { name: t("nav.skills"), href: getRelativeLocaleUrl(lang, "/#skills") },
+  { name: t("nav.contact"), href: getRelativeLocaleUrl(lang, "/#contact") },
+];
+---
+
+<header class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
+  <div
+    class="absolute inset-0 bg-slate-950/70 backdrop-blur-md border-b border-white/10"
+  >
+  </div>
+  <div
+    class="container mx-auto px-6 py-4 relative flex justify-between items-center"
+  >
+    <a
+      href={getRelativeLocaleUrl(lang, "/")}
+      class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400 hover:opacity-80 transition-opacity"
+    >
+      YastaPortfolio
+    </a>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex items-center gap-8">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="text-slate-300 hover:text-white hover:scale-105 transition-all text-sm font-medium"
+          >
+            {item.name}
+          </a>
+        ))
+      }
+
+      <LanguagePicker />
+
+      <div class="flex items-center gap-4 ml-4 pl-4 border-l border-white/10">
+        <a
+          href="https://github.com/jescrodova/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-400 hover:text-white transition-colors"
+        >
+          <Github class="w-5 h-5" />
+        </a>
+        <a
+          href="https://linkedin.com/feed/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-400 hover:text-white transition-colors"
+        >
+          <Linkedin class="w-5 h-5" />
+        </a>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="menu-btn"
+      class="md:hidden text-slate-300 hover:text-white focus:outline-none"
+      aria-label="Menu"
+    >
+      <Menu class="w-6 h-6" id="menu-icon-open" />
+      <X class="w-6 h-6 hidden" id="menu-icon-close" />
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-xl border-b border-white/10 overflow-hidden h-0 transition-all duration-300"
+  >
+    <nav class="flex flex-col items-center py-8 gap-6">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="text-lg text-slate-300 hover:text-white font-medium mobile-link"
+          >
+            {item.name}
+          </a>
+        ))
+      }
+      <div class="flex items-center gap-6 mt-4">
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-400 hover:text-white"
+        >
+          <Github class="w-6 h-6" />
+        </a>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-400 hover:text-white"
+        >
+          <Linkedin class="w-6 h-6" />
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIconOpen = document.getElementById("menu-icon-open");
+  const menuIconClose = document.getElementById("menu-icon-close");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    if (isMenuOpen) {
+      mobileMenu?.classList.remove("h-0");
+      mobileMenu?.classList.add("h-screen");
+      menuIconOpen?.classList.add("hidden");
+      menuIconClose?.classList.remove("hidden");
+    } else {
+      mobileMenu?.classList.add("h-0");
+      mobileMenu?.classList.remove("h-screen");
+      menuIconOpen?.classList.remove("hidden");
+      menuIconClose?.classList.add("hidden");
+    }
+  }
+
+  menuBtn?.addEventListener("click", toggleMenu);
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (isMenuOpen) toggleMenu();
+    });
+  });
+
+  // Navbar scroll effect
+  const navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 20) {
+      navbar?.classList.add("shadow-lg");
+    } else {
+      navbar?.classList.remove("shadow-lg");
+    }
+  });
+</script>
