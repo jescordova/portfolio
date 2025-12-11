@@ -8,7 +8,7 @@ export const projects = [
         },
         tags: ["Astro", "TailwindCSS", "Chart.js"],
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-        github: "#",
+        github: "https://github.com/jescordova/portfolio",
         demo: "/demo/ecommerce-dashboard",
         isRecent: true
     },
@@ -19,10 +19,10 @@ export const projects = [
             en: "High-conversion landing page with smooth animations and SEO optimization.",
             es: "Página de aterrizaje de alta conversión con animaciones fluidas y optimización SEO."
         },
-        tags: ["Astro", "React", "Framer Motion"],
+        tags: ["Astro", "TailwindCSS", "Lucide Icons"],
         image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2669&auto=format&fit=crop",
-        github: "#",
-        demo: "#",
+        github: "https://github.com/jescordova/portfolio",
+        demo: "/demo/saas-landing",
         isRecent: true
     },
     {
@@ -47,7 +47,7 @@ export const projects = [
         },
         tags: ["HTML", "CSS", "JavaScript"],
         image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2555&auto=format&fit=crop",
-        github: "#",
+        github: "",
         demo: "#",
         isRecent: false
     },

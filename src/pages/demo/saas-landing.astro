@@ -1,0 +1,740 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+---
+
+<Layout title="CloudSync - Modern Cloud Storage Solution">
+    <Header />
+
+    <!-- Hero Section -->
+    <section
+        class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950"
+    >
+        <!-- Animated background -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div
+                class="absolute w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl -top-48 -left-48 animate-pulse"
+            >
+            </div>
+            <div
+                class="absolute w-96 h-96 bg-purple-500/20 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse"
+                style="animation-delay: 1s;"
+            >
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 pt-24">
+            <div class="max-w-4xl mx-auto text-center">
+                <div
+                    class="inline-block mb-6 px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 rounded-full backdrop-blur-sm"
+                >
+                    <span class="text-indigo-400 text-sm font-medium"
+                        >✨ Nouveau : Synchronisation en temps réel</span
+                    >
+                </div>
+
+                <h1
+                    class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-transparent leading-tight"
+                >
+                    Stockez, Synchronisez,<br />Collaborez
+                </h1>
+
+                <p
+                    class="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl mx-auto"
+                >
+                    La solution cloud moderne pour vos équipes. Sécurisé, rapide
+                    et accessible partout.
+                </p>
+
+                <div
+                    class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                >
+                    <a
+                        href="#pricing"
+                        class="group px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105"
+                    >
+                        Commencer gratuitement →
+                    </a>
+                    <a
+                        href="#features"
+                        class="px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300"
+                    >
+                        Voir les fonctionnalités
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-8 mt-20 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div
+                            class="text-3xl md:text-4xl font-bold text-white mb-2"
+                        >
+                            50K+
+                        </div>
+                        <div class="text-slate-400 text-sm">
+                            Utilisateurs actifs
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="text-3xl md:text-4xl font-bold text-white mb-2"
+                        >
+                            99.9%
+                        </div>
+                        <div class="text-slate-400 text-sm">Uptime garanti</div>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="text-3xl md:text-4xl font-bold text-white mb-2"
+                        >
+                            5PB
+                        </div>
+                        <div class="text-slate-400 text-sm">
+                            Données stockées
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg
+                class="w-8 h-8 text-white/50"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-slate-950">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent"
+                >
+                    Fonctionnalités puissantes
+                </h2>
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+                    Tout ce dont vous avez besoin pour gérer vos fichiers
+                    efficacement
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="group relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity blur-xl"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-2"
+                    >
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mb-6"
+                        >
+                            <svg
+                                class="w-7 h-7 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">
+                            Stockage illimité
+                        </h3>
+                        <p class="text-slate-400">
+                            Stockez autant de fichiers que vous le souhaitez
+                            sans limite de taille ou de nombre.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="group relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity blur-xl"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-2"
+                    >
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mb-6"
+                        >
+                            <svg
+                                class="w-7 h-7 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">
+                            Sécurité maximale
+                        </h3>
+                        <p class="text-slate-400">
+                            Chiffrement de bout en bout et authentification à
+                            deux facteurs pour protéger vos données.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="group relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity blur-xl"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-2"
+                    >
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mb-6"
+                        >
+                            <svg
+                                class="w-7 h-7 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">
+                            Synchronisation rapide
+                        </h3>
+                        <p class="text-slate-400">
+                            Synchronisez vos fichiers en temps réel sur tous vos
+                            appareils instantanément.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="group relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity blur-xl"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-2"
+                    >
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mb-6"
+                        >
+                            <svg
+                                class="w-7 h-7 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">
+                            Collaboration d'équipe
+                        </h3>
+                        <p class="text-slate-400">
+                            Partagez et collaborez facilement avec votre équipe
+                            en temps réel.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="group relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity blur-xl"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-2"
+                    >
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mb-6"
+                        >
+                            <svg
+                                class="w-7 h-7 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">
+                            Applications mobiles
+                        </h3>
+                        <p class="text-slate-400">
+                            Accédez à vos fichiers depuis n'importe où avec nos
+                            apps iOS et Android.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="group relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity blur-xl"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-2"
+                    >
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mb-6"
+                        >
+                            <svg
+                                class="w-7 h-7 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">
+                            Historique des versions
+                        </h3>
+                        <p class="text-slate-400">
+                            Restaurez n'importe quelle version précédente de vos
+                            fichiers en un clic.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section
+        id="pricing"
+        class="py-24 bg-gradient-to-b from-slate-950 to-slate-900"
+    >
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent"
+                >
+                    Tarifs simples et transparents
+                </h2>
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+                    Choisissez le plan qui correspond à vos besoins
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Free Plan -->
+                <div
+                    class="relative bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-indigo-500/30 transition-all duration-300"
+                >
+                    <h3 class="text-2xl font-bold text-white mb-2">Gratuit</h3>
+                    <p class="text-slate-400 mb-6">Pour les particuliers</p>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold text-white">0€</span>
+                        <span class="text-slate-400">/mois</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="text-green-500 mt-0.5">✓</span>
+                            <span class="text-slate-300">10 GB de stockage</span
+                            >
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-green-500 mt-0.5">✓</span>
+                            <span class="text-slate-300"
+                                >Synchronisation de base</span
+                            >
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-green-500 mt-0.5">✓</span>
+                            <span class="text-slate-300"
+                                >Applications mobiles</span
+                            >
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full py-3 bg-white/5 border border-white/10 text-white rounded-xl font-semibold hover:bg-white/10 transition-all"
+                    >
+                        Commencer
+                    </button>
+                </div>
+
+                <!-- Pro Plan (Popular) -->
+                <div
+                    class="relative bg-gradient-to-br from-indigo-600 to-purple-600 p-8 rounded-2xl transform scale-105 shadow-2xl shadow-indigo-500/50"
+                >
+                    <div
+                        class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-yellow-500 text-slate-900 text-sm font-bold rounded-full"
+                    >
+                        POPULAIRE
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Pro</h3>
+                    <p class="text-indigo-100 mb-6">Pour les professionnels</p>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold text-white">19€</span>
+                        <span class="text-indigo-100">/mois</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="text-white mt-0.5">✓</span>
+                            <span class="text-white">1 TB de stockage</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-white mt-0.5">✓</span>
+                            <span class="text-white"
+                                >Synchronisation prioritaire</span
+                            >
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-white mt-0.5">✓</span>
+                            <span class="text-white">Historique 30 jours</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-white mt-0.5">✓</span>
+                            <span class="text-white">Support prioritaire</span>
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full py-3 bg-white text-indigo-600 rounded-xl font-semibold hover:bg-indigo-50 transition-all"
+                    >
+                        Commencer l'essai
+                    </button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div
+                    class="relative bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-indigo-500/30 transition-all duration-300"
+                >
+                    <h3 class="text-2xl font-bold text-white mb-2">
+                        Entreprise
+                    </h3>
+                    <p class="text-slate-400 mb-6">Pour les équipes</p>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold text-white">49€</span>
+                        <span class="text-slate-400">/mois</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="text-green-500 mt-0.5">✓</span>
+                            <span class="text-slate-300">Stockage illimité</span
+                            >
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-green-500 mt-0.5">✓</span>
+                            <span class="text-slate-300"
+                                >Utilisateurs illimités</span
+                            >
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-green-500 mt-0.5">✓</span>
+                            <span class="text-slate-300"
+                                >Historique illimité</span
+                            >
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-green-500 mt-0.5">✓</span>
+                            <span class="text-slate-300">Support 24/7</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-green-500 mt-0.5">✓</span>
+                            <span class="text-slate-300">API personnalisée</span
+                            >
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full py-3 bg-white/5 border border-white/10 text-white rounded-xl font-semibold hover:bg-white/10 transition-all"
+                    >
+                        Nous contacter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-slate-950">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent"
+                >
+                    Ce que disent nos clients
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Testimonial 1 -->
+                <div
+                    class="bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10"
+                >
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-500">★★★★★</span>
+                    </div>
+                    <p class="text-slate-300 mb-6">
+                        "CloudSync a transformé notre façon de travailler. La
+                        synchronisation est ultra-rapide et la collaboration n'a
+                        jamais été aussi simple."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold"
+                        >
+                            MR
+                        </div>
+                        <div>
+                            <div class="font-semibold text-white">
+                                Marie Rousseau
+                            </div>
+                            <div class="text-sm text-slate-400">
+                                CEO, TechStart
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div
+                    class="bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10"
+                >
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-500">★★★★★</span>
+                    </div>
+                    <p class="text-slate-300 mb-6">
+                        "La sécurité et la fiabilité sont au rendez-vous. Nous
+                        avons migré toute notre infrastructure sur CloudSync
+                        sans aucun problème."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold"
+                        >
+                            PD
+                        </div>
+                        <div>
+                            <div class="font-semibold text-white">
+                                Pierre Dubois
+                            </div>
+                            <div class="text-sm text-slate-400">
+                                CTO, DataCorp
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div
+                    class="bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10"
+                >
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-500">★★★★★</span>
+                    </div>
+                    <p class="text-slate-300 mb-6">
+                        "Interface intuitive, performances excellentes.
+                        CloudSync est devenu indispensable pour notre équipe
+                        distribuée."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold"
+                        >
+                            SL
+                        </div>
+                        <div>
+                            <div class="font-semibold text-white">
+                                Sophie Laurent
+                            </div>
+                            <div class="text-sm text-slate-400">
+                                Designer, CreativeHub
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+        class="py-24 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 relative overflow-hidden"
+    >
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHptMC0xMGMwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAxLjc5IDQgNCA0IDQtMS43OSA0LTR6TTI0IDM0YzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHptMC0xMGMwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAxLjc5IDQgNCA0IDQtMS43OSA0LTR6bTAtMTBjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00ek0xMiAzNGMwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAxLjc5IDQgNCA0IDQtMS43OSA0LTR6bTAtMTBjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"
+        >
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Prêt à commencer ?
+                </h2>
+                <p class="text-xl text-indigo-100 mb-8">
+                    Rejoignez plus de 50 000 utilisateurs qui font confiance à
+                    CloudSync pour leurs fichiers.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                        href="#pricing"
+                        class="px-8 py-4 bg-white text-indigo-600 rounded-xl font-semibold hover:bg-indigo-50 transition-all duration-300 hover:scale-105 shadow-xl"
+                    >
+                        Essai gratuit 14 jours
+                    </a>
+                    <a
+                        href="#"
+                        class="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all duration-300"
+                    >
+                        Planifier une démo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-950 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">CloudSync</h3>
+                    <p class="text-slate-400 text-sm">
+                        La solution cloud moderne pour vos équipes.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Produit</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Fonctionnalités</a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Tarifs</a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Sécurité</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Entreprise</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >À propos</a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Blog</a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Carrières</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Support</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Centre d'aide</a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Contact</a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Statut</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="pt-8 border-t border-white/5 text-center text-slate-500 text-sm"
+            >
+                <p>
+                    &copy; {new Date().getFullYear()} CloudSync. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+</Layout>
+
+<style>
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+</style>
